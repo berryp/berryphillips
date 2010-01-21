@@ -1,8 +1,15 @@
 import os 
 from google.appengine.ext import webapp
+from google.appengine.api import users
 from google.appengine.ext.webapp import template
 
 class RequestHandler(webapp.RequestHandler):
+	def authenticate(func):
+		def callf(request, *args, **kwargs):
+			if not users.get_current_user():
+				request.redirect(users.create_login_url(request.uri))
+		return callf
+
 	def get_template(self, template_name):
 		return os.path.join(os.path.dirname(__file__), 'templates', template_name)
 

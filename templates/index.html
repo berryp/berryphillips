@@ -1,11 +1,7 @@
-<html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
-	</head>
-	<body>
-		<div>
-			<h1>Berry Phillips</h1>
-				{{ body }}
-		</div>
-	</body>
-</html>
+{% extends "base.html" %}
+{% block body %}
+	<div class="article">
+		{{ body }}
+	</div>
+{% endblock body %}
+

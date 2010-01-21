@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/syntax_default.css" />
+		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<h1>Berry Phillips</h1>
+				<div class="greeting">
+					{{ greeting }}
+				</div>
+			</div>
+			<div id="main">
+				<div id="body">
+					{% block body %}{% endblock body %}
+				</div>
+				<div id="right">
+					Right!
+				</div>
+				<div class="clearBoth"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -5,6 +5,10 @@ api_version: 1
 
 handlers:
 - url: /stylesheets
-  static_dir: stylesheets
+  static_dir: public/stylesheets
+- url: /images
+  static_dir: public/images
+- url: /javascripts
+  static_dir: public/javascripts
 - url: /.*
-  script: berryphillips.py
+  script: main.py
