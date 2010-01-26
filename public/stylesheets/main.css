@@ -1,26 +1,36 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  background-color: #ddd;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  background: #fff url(http://www.photoshopstar.com/tutorials/31/02.jpg) repeat-x;
 }
 
-pre 					{ padding: 3px; margin: 0px 2px 0px 2px; }
+a						{ font-family: Arial, Helvetica, sans-serif; }
+pre 					{ padding: 3px; margin: 0px 2px 0px 2px; border-top: solid 1px #ccc; border-bottom: solid 1px #ccc; }
+img						{ border: none; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px; }
+h1						{ font-size: 3em; margin: 0px 0px 40px 0px; color: #003366; }
+a						{ font-weight: bold; text-decoration: none; color: #789a9f; }
+a:hover					{ text-decoration: underline; color: #000; }
 
+/*
 .codehilitetable 		{ border: solid 1px #ccc; width: 600px; }
 .codehilitetable
 	.linenos			{ background: #aaaaff; }
+*/
 
-.codehilite 			{ overflow: auto; width: 600px; }
+.syntax		 			{ overflow: auto; width: 600px; }
 
 .clearBoth 				{ clear: both; }
 
-#header 				{ color: #fff; height: 30px; background: #000; }
-#header h1 				{ float: left; padding: 0px 0px 0px 10px; font-size: 120%; font-family: monospace;  }
-#header .greeting 		{ float: right; padding: 5px 10px 0px 0px; font-size: 110%; }
-
-#main 					{ margin: 30px auto; width: 950px; background: #fff; padding: 10px 20px 10px 20px; }
-#body 					{ float: left; width: 650px; }
+#header 				{ color: #fff; height: 46px; background: #333; font-family: }
+#header	span			{ font-family: monospace; font-size: 180%; font-weight: bold; } 
+#header .links 			{ float: left; padding: 13px 0px 0px 15px; width: 500px; font-size: 100%; }
+#header .links a		{ color: #eee; padding-right: 9px; font-weight: normal; display: none; }
+#header .links a:hover	{ text-decoration: underline; }
+#socialLinks			{ float: right; margin: 8px 7px 0px 0px; width: 150px; }
+#socialLinks a			{ float: right; padding: 0px 0px 0px 4px; }
+#main 					{ margin: 50px 0; width: 950px; background: #fff; padding: 10px 20px 10px 20px; }
+#body 					{ float: left; width: 650px; border-right: dotted 1px #999; }
 #right 					{ float: right; width: 250px; }
 

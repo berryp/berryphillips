@@ -53,7 +53,7 @@ class CodeHilite:
     
     """
 
-    def __init__(self, src=None, linenos=False, css_class="codehilite"):
+    def __init__(self, src=None, linenos=False, css_class="syntax"):
         self.src = src
         self.lang = None
         self.linenos = linenos
@@ -204,7 +204,7 @@ class CodeHiliteExtension(markdown.Extension):
         # define default configs
         self.config = {
             'force_linenos' : [False, "Force line numbers - Default: False"],
-            'css_class' : ["codehilite", 
+            'css_class' : ["syntax", 
                            "Set class name for wrapper <div> - Default: codehilite"],
             }
         

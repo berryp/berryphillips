@@ -1,9 +1,15 @@
-import os 
+import os, sys
 from google.appengine.ext import webapp
 from google.appengine.api import users
 from google.appengine.ext.webapp import template
+import config
 
 class RequestHandler(webapp.RequestHandler):
+	def __init__(self):
+		#sys.path.insert(0, config.APP_ROOT_DIR)
+		#sys.path.insert(1, os.path.join(config.APP_ROOT_DIR, 'util'))
+		sys.path.insert(0, '/home/berryp/webapps/berryphillips/util')
+
 	def authenticate(func):
 		def callf(request, *args, **kwargs):
 			if not users.get_current_user():
@@ -18,3 +24,5 @@ class RequestHandler(webapp.RequestHandler):
 		template.register_template_library('django.contrib.markup.templatetags.markup')
 		return template.render(template_path, template_vars)
 
+	def render_to_response(self, template_name, template_vars):
+		self.response.out.write(self.render_template(template_name, template_vars))

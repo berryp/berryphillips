@@ -1,0 +1,38 @@
+{% extends "../base.html" %}
+{% block body %}
+<div class="article">
+	<form action="/" method="post">
+
+		<div class="formField">
+			<label for="title">Title</title>
+			<input type="text" name="title" id="title" />
+		</div>
+
+		<div class="formField">
+			<label for="title">Slug</title>
+			<input type="text" name="title" id="title" />
+		</div>
+		
+		<div class="formField">
+			<label for="status"></title>
+			<select id="status" name="status">
+				<option value="0">Draft</option>
+				<option value="1">Published</option>
+			</select>
+		</div>
+		
+		<div class="formField">
+			<label for="body">Body</title>
+			<textarea id="body" name="body" rows="60" cols="150">{{ body }}</textarea>
+		</div>
+		
+		<div class="formField">
+			<label for="tags">Tags</title>
+			<input type="text" name="tags" id="tags" />
+		</div>
+		<div class="formButtons">
+			<input type="submit" text="Submit" />
+		</div>	
+	</form>
+</div>
+{% endblock body %}

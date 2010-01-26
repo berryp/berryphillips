@@ -1,23 +1,69 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 	<head>
-		<link type="text/css" rel="stylesheet" href="/stylesheets/syntax_default.css" />
+		<!--<link type="text/css" rel="stylesheet" href="/stylesheets/syntax/friendly.css" />-->
+		<link type="text/css" rel="stylesheet" href="/stylesheets/syntax/monokai.css" />
 		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+		<script type="text/javascript" src="/javascripts/jquery-1.4.min.js"></script>
+		<script type="text/javascript">
+			function register_hover(selector) {
+				$(selector).mouseenter(function(){
+					$(selector).stop().animate({opacity:1.0}, 150);
+				});
+				$(selector).mouseout(function(){
+					$(selector).stop().animate({opacity:0.6}, 150);
+				});
+			}
+
+			$(document).ready(function(){
+				$("#socialLinks img").animate({opacity:0.6}, 1000);
+				register_hover("#linkedInLink img");
+				register_hover("#googleLink img");
+				register_hover("#picasaLink img");
+				register_hover("#feedLink img");
+			});
+		</script>
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="header">
-				<h1>Berry Phillips</h1>
-				<div class="greeting">
-					{{ greeting }}
+				<div class="links"><span>BERRY PHILLIPS</span>
+					<a href="/">Homepage</a>
+					<a href="/blog">Blog</a>
+					<a href="/about">About Me</a>
+					<a href="/contact">Contact me</a>
+					<a href="/Links">Links</a>
+				</div>
+				<div id="socialLinks">
+					<a id="linkedInLink" href="http://www.linkedin.com/in/berryphillips" title="View my LinkedIn profile">
+						<img id="linkedInIcon" src="/images/social/icons/32/linkedin_32.png" alt="LinkedIn" />
+					</a>
+					<a id="googleLink" href="http://www.google.com/profiles/berryphillips" title="View my Google profile">
+						<img id="googleIcon" src="/images/social/icons/32/google_32.png" alt="Google" />
+					</a>
+					<a id="picasaLink" href="http://picasaweb.google.com/berryphillips" title="View my photos">
+						<img id="picasaIcon" src="/images/social/icons/32/picasa_32.png" alt="Picasa" />
+					</a>
+					<a id="feedLink" href="http://www.berryphillips.com/feeds" title="View my feeds">
+						<img id="feedIcon" src="/images/social/icons/32/feed_32.png" alt="Feeds" />
+					</a>
 				</div>
 			</div>
 			<div id="main">
 				<div id="body">
+					<h1>Recent Articles</h1>
 					{% block body %}{% endblock body %}
 				</div>
 				<div id="right">
 					Right!
+						<div>
+							{% if user %}
+								Welcome, {{ user.nickname }}
+								( {{ user|signin_url }} )
+							{% else %}
+								{{ user|signin_url }}
+							{% endif %}
+						</div>
 				</div>
 				<div class="clearBoth"></div>
 			</div>
